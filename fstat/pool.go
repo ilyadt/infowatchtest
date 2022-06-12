@@ -28,7 +28,7 @@ type Job struct {
 type Result struct {
 	ID   string
 	Err  error
-	Hist *histogram.DiscreteHistogram[rune]
+	Hist *histogram.DiscreteHistogram[byte]
 }
 
 func (p *WorkerPool) AddJob(j *Job) {

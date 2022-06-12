@@ -2,9 +2,9 @@ package histogram
 
 import "golang.org/x/exp/constraints"
 
-func NewDiscreteHistogram[T constraints.Ordered]() *DiscreteHistogram[T] {
+func NewDiscreteHistogram[T constraints.Ordered](preAllocBuc int) *DiscreteHistogram[T] {
 	return &DiscreteHistogram[T]{
-		Buckets: map[T]int{},
+		Buckets: make(map[T]int, preAllocBuc),
 		Count:   0,
 	}
 }
