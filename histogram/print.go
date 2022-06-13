@@ -10,7 +10,7 @@ import (
 
 type kv[T constraints.Ordered] struct {
 	Key   T
-	Value int
+	Value int64
 }
 
 func fmtBucketFunc[T constraints.Ordered]() func(T) string {
