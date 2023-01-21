@@ -23,7 +23,7 @@ func GatherStats(filepath string) (*histogram.DiscreteHistogram[byte], error) {
 	hist := histogram.NewDiscreteHistogram[byte](256)
 
 	for {
-		b, err :=reader.ReadByte()
+		b, err := reader.ReadByte()
 		if errors.Is(err, io.EOF) {
 			break
 		} else if err != nil {

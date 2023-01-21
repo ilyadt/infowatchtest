@@ -1,0 +1,26 @@
+linters:
+  enable:
+    - asciicheck
+    - bodyclose
+    - gosec
+    - depguard
+    - dupl
+    - errname
+    - exportloopref
+    - whitespace
+    - testpackage
+    - wsl
+    - stylecheck
+    - nlreturn
+    - prealloc
+    - noctx
+    - gci
+    - goimports
+    - goerr113
+    - gocritic
+    - revive
+    - gosimple
+    - govet
+    - misspell
+    - ineffassign
+    - goconst

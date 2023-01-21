@@ -28,6 +28,7 @@ func main() {
 	for res := range pool.ResC() {
 		if res.Err != nil {
 			fmt.Printf("Histogram %s err: %s\n\n", res.ID, res.Err.Error())
+
 			continue
 		}
 
@@ -43,7 +44,7 @@ func addJobs(pool *fstat.WorkerPool, filesDir string) {
 	// Reading files
 	files, err := os.ReadDir(filesDir)
 	if err != nil {
-		log.Fatalf("readDir err: %s", err)
+		panic(fmt.Sprintf("readDir err: %s", err))
 	}
 
 	for _, file := range files {

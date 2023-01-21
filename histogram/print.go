@@ -26,18 +26,17 @@ func fmtBucketFunc[T constraints.Ordered]() func(T) string {
 	}
 }
 
-
 func (dh *DiscreteHistogram[T]) PrintSorted() {
 	fmtFunc := fmtBucketFunc[T]()
 
 	ss := make([]kv[T], 0, len(dh.Buckets))
-    for k, v := range dh.Buckets {
-        ss = append(ss, kv[T]{k, v})
-    }
+	for k, v := range dh.Buckets {
+		ss = append(ss, kv[T]{k, v})
+	}
 
-    sort.Slice(ss, func(i, j int) bool {
-        return ss[i].Value > ss[j].Value
-    })
+	sort.Slice(ss, func(i, j int) bool {
+		return ss[i].Value > ss[j].Value
+	})
 
 	fmt.Printf("#####################\n")
 
